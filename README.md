@@ -59,7 +59,7 @@ use PurpleDot\ValidationBundle\Validator\Constraints as PurpleDotAssert;
 // ...
 
 #[PurpleDotAssert\PolishTaxNumber]
-private ?string $taxNUmber;
+private ?string $taxNumber;
 
 $this->taxNUmber = 'PL7746249830' // valid
 $this->taxNUmber = '7746249830' // valid 
@@ -73,7 +73,7 @@ use PurpleDot\ValidationBundle\Validator\Constraints as PurpleDotAssert;
 // ...
 
 #[PurpleDotAssert\PolishTaxNumber(requirePrefix: true)]
-private ?string $taxNUmber;
+private ?string $taxNumber;
 
 $this->taxNUmber = 'PL7746249830' // valid
 $this->taxNUmber = '7746249830' // invalid 
@@ -87,7 +87,7 @@ use PurpleDot\ValidationBundle\Validator\Constraints as PurpleDotAssert;
 // ...
 
 #[PurpleDotAssert\PolishTaxNumber(allowPrefix: false)]
-private ?string $taxNUmber;
+private ?string $taxNumber;
 
 $this->taxNUmber = '7746249830' // valid 
 $this->taxNUmber = 'PL7746249830' // invalid
