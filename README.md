@@ -61,8 +61,8 @@ use PurpleDot\ValidationBundle\Validator\Constraints as PurpleDotAssert;
 #[PurpleDotAssert\PolishTaxNumber]
 private ?string $taxNumber;
 
-$this->taxNUmber = 'PL7746249830' // valid
-$this->taxNUmber = '7746249830' // valid 
+$this->taxNumber = 'PL7746249830' // valid
+$this->taxNumber = '7746249830' // valid 
 ```
 
 Require tax number prefix
@@ -75,8 +75,8 @@ use PurpleDot\ValidationBundle\Validator\Constraints as PurpleDotAssert;
 #[PurpleDotAssert\PolishTaxNumber(requirePrefix: true)]
 private ?string $taxNumber;
 
-$this->taxNUmber = 'PL7746249830' // valid
-$this->taxNUmber = '7746249830' // invalid 
+$this->taxNumber = 'PL7746249830' // valid
+$this->taxNumber = '7746249830' // invalid 
 ```
 
 Disallow tax number prefix
@@ -89,8 +89,8 @@ use PurpleDot\ValidationBundle\Validator\Constraints as PurpleDotAssert;
 #[PurpleDotAssert\PolishTaxNumber(allowPrefix: false)]
 private ?string $taxNumber;
 
-$this->taxNUmber = '7746249830' // valid 
-$this->taxNUmber = 'PL7746249830' // invalid
+$this->taxNumber = '7746249830' // valid 
+$this->taxNumber = 'PL7746249830' // invalid
 ```
 ### Pesel
 
