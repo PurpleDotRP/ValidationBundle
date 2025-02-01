@@ -1,0 +1,35 @@
+{
+  "name": "purpledot/validation-bundle",
+  "type": "symfony-bundle",
+  "description": ".",
+  "keywords": ["symfony","validation", "validator", "id card", "polish id card", "pesel", "nip", "polish tax number", "polish mobile phone", "mobile phone"],
+  "homepage": "http://purpledot.pl",
+  "license": "MIT",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "PurpleDot Robert Pajer",
+      "email": "kontakt@purpledot.pl"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "symfony/framework-bundle": "~5.0|~6.0|~7.0",
+    "symfony/dependency-injection": "~5.0|~6.0|~7.0",
+    "symfony/validator": "~5.0|~6.0|~7.0",
+    "ext-mbstring": "*"
+  },
+  "autoload": {
+    "psr-4": { "PurpleDot\\ValidationBundle\\": "src/" }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "infection/extension-installer": true
+    }
+  }
+}
