@@ -5,7 +5,7 @@
   "keywords": ["symfony","validation", "validator", "id card", "polish id card", "pesel", "nip", "polish tax number", "polish mobile phone", "mobile phone"],
   "homepage": "http://purpledot.pl",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "PurpleDot Robert Pajer",

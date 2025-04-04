@@ -21,7 +21,11 @@ class PolishMobilePhoneValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, PolishMobilePhone::class);
         }
 
-        if (mb_strlen($value, 'UTF-8') !== 9 || null === $value || '' === $value) {
+        if (null === $value || '' === $value) {
+            return;
+        }
+
+        if (mb_strlen($value, 'UTF-8') !== 9) {
             $this->context->buildViolation($constraint->lengthMessage)
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode(PolishMobilePhone::LENGTH_ERROR)
