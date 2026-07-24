@@ -7,9 +7,6 @@ namespace PurpleDot\ValidationBundle\Validator\Constraints;
 use Symfony\Component\Validator\Constraint;
 
 /**
- * @Annotation
- * @Target({"PROPERTY", "METHOD", "ANNOTATION"})
- *
  * @author Robert Pajer
  */
 #[\Attribute(\Attribute::TARGET_PROPERTY | \Attribute::TARGET_METHOD | \Attribute::IS_REPEATABLE)]
@@ -27,16 +24,6 @@ class Pesel extends Constraint
         self::INVALID_FORMAT_ERROR => 'INVALID_FORMAT_ERROR',
     ];
 
-    /**
-     * @deprecated since Symfony 6.1, use const ERROR_NAMES instead
-     */
-    protected static $errorNames = [
-        self::CHECKSUM_FAILED_ERROR => 'CHECKSUM_FAILED_ERROR',
-        self::TOO_SHORT_ERROR => 'TOO_SHORT_ERROR',
-        self::TOO_LONG_ERROR => 'TOO_LONG_ERROR',
-        self::INVALID_FORMAT_ERROR => 'INVALID_FORMAT_ERROR',
-    ];
-
     public $checkSumFailedMessage = 'The pesel number provided is incorrect';
     public $tooShortMessage = 'The pesel number provided is too short';
     public $tooLongMessage = 'The pesel number provided is too long';
@@ -48,7 +35,7 @@ class Pesel extends Constraint
         ?string $tooLongMessage = null,
         ?string $invalidFormatMessage = null,
         mixed $options = null,
-        array $groups = null,
+        ?array $groups = null,
         mixed $payload = null
     ) {
         parent::__construct($options ?? [], $groups, $payload);

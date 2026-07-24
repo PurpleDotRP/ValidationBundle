@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Exception\UnexpectedValueException;
  */
 class PolishIdCardNumberValidator extends ConstraintValidator
 {
-    public function validate($value, Constraint $constraint): void
+    public function validate(mixed $value, Constraint $constraint): void
     {
         if (!$constraint instanceof PolishIdCardNumber) {
             throw new UnexpectedTypeException($constraint, PolishIdCardNumber::class);
@@ -29,7 +29,7 @@ class PolishIdCardNumberValidator extends ConstraintValidator
         }
         
         if (strlen($value) < 9) {
-            $this->context->buildViolation($constraint->tooShortdMessage)
+            $this->context->buildViolation($constraint->tooShortMessage)
                 ->setCode(PolishIdCardNumber::TOO_SHORT_ERROR)
                 ->addViolation();
 
@@ -37,7 +37,7 @@ class PolishIdCardNumberValidator extends ConstraintValidator
         }
 
         if (strlen($value) > 9) {
-            $this->context->buildViolation($constraint->tooLongdMessage)
+            $this->context->buildViolation($constraint->tooLongMessage)
                 ->setCode(PolishIdCardNumber::TOO_LONG_ERROR)
                 ->addViolation();
 

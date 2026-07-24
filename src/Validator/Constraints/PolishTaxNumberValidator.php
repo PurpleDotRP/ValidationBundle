@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Exception\UnexpectedValueException;
  */
 class PolishTaxNumberValidator extends ConstraintValidator
 {
-    public function validate($value, Constraint $constraint): void
+    public function validate(mixed $value, Constraint $constraint): void
     {
         if (!$constraint instanceof PolishTaxNumber) {
             throw new UnexpectedTypeException($constraint, PolishTaxNumber::class);
@@ -57,7 +57,7 @@ class PolishTaxNumberValidator extends ConstraintValidator
         $nip = preg_replace('/^PL/', '', $value);
 
         if (strlen($nip) < 10) {
-            $this->context->buildViolation($constraint->tooShortdMessage)
+            $this->context->buildViolation($constraint->tooShortMessage)
                 ->setCode(PolishTaxNumber::TOO_SHORT_ERROR)
                 ->addViolation();
 
@@ -65,7 +65,7 @@ class PolishTaxNumberValidator extends ConstraintValidator
         }
 
         if (strlen($nip) > 10) {
-            $this->context->buildViolation($constraint->tooLongdMessage)
+            $this->context->buildViolation($constraint->tooLongMessage)
                 ->setCode(PolishTaxNumber::TOO_LONG_ERROR)
                 ->addViolation();
 
